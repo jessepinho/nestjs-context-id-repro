@@ -14,6 +14,7 @@ export class UsersService {
 
   private async getInjectedQueryService(request: Request) {
     const contextId = ContextIdFactory.getByRequest(request)
+    console.log('UsersService context ID', contextId)
     return await this.moduleRef.resolve(QueryService, contextId)
   }
 }
